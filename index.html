@@ -3,41 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Love Story 💖</title>
+<title>Love 💖</title>
 
 <style>
 body{
   margin:0;
   height:100vh;
-  font-family:Arial, sans-serif;
-  background: linear-gradient(180deg,#ffb6c1,#ffc0cb);
+  overflow:hidden;
+  background: #ffc0cb;
+  font-family: Arial, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
-}
-
-.heart-bg{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:url("https://i.imgur.com/8QfQZQy.png");
-  opacity:0.15;
+  text-align:center;
 }
 
 .box{
-  position:relative;
-  z-index:2;
-  background:rgba(255,255,255,0.25);
+  position: relative;
+  background: rgba(255,255,255,0.25);
   backdrop-filter: blur(6px);
-  padding:35px 25px;
-  border-radius:30px;
-  text-align:center;
-  width:90%;
-  max-width:360px;
+  padding: 35px 25px;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 380px;
+  z-index:2;
 }
 
-h2{margin-bottom:10px}
+h1{font-size:26px}
+p{font-size:17px;line-height:1.8}
 input{
   width:80%;
   padding:12px;
@@ -48,63 +41,122 @@ input{
 }
 button{
   margin-top:15px;
-  padding:12px 45px;
+  padding:12px 40px;
   border:none;
   border-radius:25px;
-  background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+  background: linear-gradient(90deg,#ff9a9e,#fad0c4);
   font-size:16px;
   cursor:pointer;
 }
 
-#content{display:none}
-img{
-  width:220px;
-  border-radius:18px;
-  margin-top:12px;
+/* screens */
+.screen{display:none}
+.screen.active{display:block}
+
+/* قلب طالع */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  color:#ff4d6d;
+  font-weight:bold;
+  animation: float 6s linear infinite;
+  opacity:0.8;
 }
-p{line-height:1.7}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:0}
+  20%{opacity:1}
+  100%{transform:translateY(-110vh);opacity:0}
+}
 </style>
 </head>
 
 <body>
 
-<div class="heart-bg"></div>
-
-<div class="box" id="login">
-  <div style="font-size:40px">💖✨</div>
-  <h2>Enter Password</h2>
-  <p>Our Love Story</p>
+<!-- LOGIN -->
+<div class="box screen active" id="login">
+  <h1>💖 Enter Password 💖</h1>
   <input type="password" id="pass" placeholder="15/6">
   <br>
-  <button onclick="unlock()">💞 Unlock 💞</button>
+  <button onclick="unlock()">Unlock 💞</button>
 </div>
 
-<div class="box" id="content">
-  <h2>بحبك قد الدنيا ❤️</h2>
-
+<!-- SCREEN 1 -->
+<div class="box screen" id="s1">
+  <h1>طمطوم 👀♥</h1>
   <p>
-  من يوم ما دخلتي حياتي وأنا حاسس إن كل حاجة بقت أهدى وأحلى،  
-  وجودك فرق معايا في تفاصيل صغيرة يمكن ماكنتش باخد بالي منها قبل كده.  
-  ضحكتك، كلامك، حتى سكوتك ليه تأثير جوا قلبي.  
-  بحبك لأنك بسيطة وحقيقية، لأنك بتطمني من غير ما تتكلمي،  
-  وبحس وأنا معاكي إني في أمان.  
-  يمكن ماعرفش أوصف كل اللي جوايا،  
-  بس اللي متأكد منه إنك أحلى حاجة حصلتلي  
-  وإن قلبي اختارك بإرادته 🤍
+  يا اجمل حاجه حصلتلي ف دنيتي  
+  كل عيد حب وانتي الحب الاول والاخير  
+  كل عيد حب وانتي عيدي  
+  كل عيد حب وانتي حبيبتي 🫂❤
   </p>
+</div>
 
-  <img src="https://i.imgur.com/1Yc5QpK.jpg">
-  <img src="https://i.imgur.com/JN0Zb6U.jpg">
+<!-- SCREEN 2 -->
+<div class="box screen" id="s2">
+  <p>
+  كل يوم انتي معايا فيه هو عيد  
+  كل يوم بشوفك او بسمعك فيه هو عيد 💝
+  </p>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="box screen" id="s3">
+  <p>
+  مكنتش محتاج يوم معين في السنه علشان اعبرلك عن حبي  
+  ولا في يوم مخصوص احبك فيه  
+  انا بحبك كل يوم  
+  المهم ان كل سنه وانتي جنبي وحبيبتي ومعايا  
+  ودي حاجه بسيطة عملتها علي كذا يوم  
+  مخدتش من وقتي ولا مجهود  
+  هي خدت كل مشاعر قلبي  
+  واللي حاسس بيه وظهرتلك  
+  علشان تعبرلك ف الصورة دي  
+  وبس كده يارب تعجبك 👀♥
+  </p>
 </div>
 
 <script>
 function unlock(){
-  if(document.getElementById("pass").value==="15/6"){
-    document.getElementById("login").style.display="none";
-    document.getElementById("content").style.display="block";
-  } else {
+  if(document.getElementById("pass").value.trim()==="15/6"){
+    document.getElementById("login").classList.remove("active");
+    startLove();
+  }else{
     alert("الباسورد غلط يا قمر 🥲");
   }
+}
+
+/* توليد قلوب طمطوم */
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "طمطم";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (15+Math.random()*20)+"px";
+  heart.style.animationDuration = (4+Math.random()*4)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+}
+
+function startLove(){
+  setInterval(createHeart,300); // كل 0.3 ثانية قلب جديد
+
+  const screens = ["s1","s2","s3"];
+  let i=0;
+  showScreen(screens[i]);
+
+  setInterval(()=>{
+    document.getElementById(screens[i]).classList.remove("active");
+    i++;
+    if(i<screens.length){
+      showScreen(screens[i]);
+    }
+  },7000); // كل شاشة 7 ثواني
+}
+
+function showScreen(id){
+  document.getElementById(id).classList.add("active");
 }
 </script>
 
