@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  font-family:Arial, sans-serif;
+  background: linear-gradient(180deg,#ffb6c1,#ffc0cb);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.heart-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url("https://i.imgur.com/8QfQZQy.png");
+  opacity:0.15;
+}
+
+.box{
+  position:relative;
+  z-index:2;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+  padding:35px 25px;
+  border-radius:30px;
+  text-align:center;
+  width:90%;
+  max-width:360px;
+}
+
+h2{margin-bottom:10px}
+input{
+  width:80%;
+  padding:12px;
+  border:none;
+  border-radius:20px;
+  text-align:center;
+  font-size:16px;
+}
+button{
+  margin-top:15px;
+  padding:12px 45px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(90deg,#ff9a9e,#fad0c4);
+  font-size:16px;
+  cursor:pointer;
+}
+
+#content{display:none}
+img{
+  width:220px;
+  border-radius:18px;
+  margin-top:12px;
+}
+p{line-height:1.7}
+</style>
+</head>
+
+<body>
+
+<div class="heart-bg"></div>
+
+<div class="box" id="login">
+  <div style="font-size:40px">💖✨</div>
+  <h2>Enter Password</h2>
+  <p>Our Love Story</p>
+  <input type="password" id="pass" placeholder="15/6">
+  <br>
+  <button onclick="unlock()">💞 Unlock 💞</button>
+</div>
+
+<div class="box" id="content">
+  <h2>بحبك قد الدنيا ❤️</h2>
+
+  <p>
+  من يوم ما دخلتي حياتي وأنا حاسس إن كل حاجة بقت أهدى وأحلى،  
+  وجودك فرق معايا في تفاصيل صغيرة يمكن ماكنتش باخد بالي منها قبل كده.  
+  ضحكتك، كلامك، حتى سكوتك ليه تأثير جوا قلبي.  
+  بحبك لأنك بسيطة وحقيقية، لأنك بتطمني من غير ما تتكلمي،  
+  وبحس وأنا معاكي إني في أمان.  
+  يمكن ماعرفش أوصف كل اللي جوايا،  
+  بس اللي متأكد منه إنك أحلى حاجة حصلتلي  
+  وإن قلبي اختارك بإرادته 🤍
+  </p>
+
+  <img src="https://i.imgur.com/1Yc5QpK.jpg">
+  <img src="https://i.imgur.com/JN0Zb6U.jpg">
+</div>
+
+<script>
+function unlock(){
+  if(document.getElementById("pass").value==="15/6"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("content").style.display="block";
+  } else {
+    alert("الباسورد غلط يا قمر 🥲");
+  }
+}
+</script>
+
+</body>
+</html>
