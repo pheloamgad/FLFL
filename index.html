@@ -19,6 +19,7 @@
         .card { background: white; border-radius: 25px; padding: 20px; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0,0,0,0.05); border: 1px solid #f8bbd0; text-align: center; overflow: hidden; }
         h2 { color: var(--dark-pink); font-family: 'Amiri', serif; margin-bottom: 15px; }
         
+        /* تحسين عرض الصور لتكون واضحة تماماً */
         .special-photo { width: 100%; border-radius: 15px; margin-bottom: 10px; border: 1px solid #eee; display: block; height: auto; }
         .photo-caption { font-size: 1.1rem; color: var(--dark-pink); font-weight: bold; margin-bottom: 25px; display: block; }
 
@@ -34,6 +35,94 @@
         @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
     </style>
 </head>
+<body>
+
+    <div id="lock-screen">
+        <div style="font-size: 50px;">🔒</div>
+        <h2 style="margin-top: 10px;">مكاننا الخاص</h2>
+        <p>اكتبي تاريخ ميلادك عشان تدخلي ❤️</p>
+        <input type="text" id="password" class="pass-input" placeholder="يوم/شهر">
+        <br>
+        <button class="unlock-btn" onclick="checkPassword()">فتح القفل</button>
+        <p id="error-msg" style="color: red; font-size: 0.8rem; display: none; margin-top: 10px;">الباسوورد غلط يا طمطم ركزي 😉</p>
+    </div>
+
+    <div id="main-content">
+        <div class="card">
+            <div style="font-size: 40px; animation: beat 1s infinite;">❤️</div>
+            <h2>إلى طمطم</h2>
+            <p>كل ثانية معاكي هي بداية قصة حب جديدة</p>
+        </div>
+
+        <div class="card">
+            <h3>⏱️ بقالنا مع بعض</h3>
+            <div class="timer-box">
+                <span class="timer-num">452</span>
+                <span>يوم من الضحك والحب والسند</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #888;">منذ: 17 نوفمبر 2024</p>
+        </div>
+
+        <div class="card">
+            <h3>حكاياتنا بالصور 📸</h3>
+            
+            <img src="https://i.ibb.co/fdGpHH5q/image.jpg" class="special-photo" alt="اول بحبك">
+            <span class="photo-caption">اول بحبك قولناها لبعض 🤗❤️</span>
+            
+            <hr style="border: 0.5px solid #fce4ec; margin: 25px 0;">
+
+            <img src="https://i.ibb.co/8gspTrMC/image.jpg" class="special-photo" alt="اول خناقة">
+            <span class="photo-caption">اول خناقة وصلح بينا 🤗❤️</span>
+        </div>
+
+        <div class="card">
+            <h2>Love Letter 💌</h2>
+            <div class="love-letter">
+                عايز أقول ليكي كلمتين يا طمطم حاجة يمكن ما تتخيليهاش
+                انتي اكتر إنسانة لمست قلبي من غير ما تحسي كل مرة بتكلم معاكي بحس إني بجري من تعب الدنيا كلها وأجي لصوتك هو المكان اللي برتاح فيه
+                
+                بحس إني لقيت نفسي فيكي في كل تفاصيلك بتخليني أصدق إن في حب حقيقي لسه قاعد
+                
+                🌸 ليكي انتي الأمان كله
+                💖 بحبك لأنك بتفهميني من غير ما أتكلم
+                🌸 بتطمنيني من غير ما أشرح
+                💖 بحبك لأنك دايما السبب في ضحكتي
+                🌸 علمتيني أحس من غير خوف وأحب وأنا مطمنة
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>ذكرياتنا 📖</h3>
+            <div class="timeline-item">
+                <strong>أول يوم (17/11/2024)</strong>
+                <p>البداية اللي خلت لحياتي طعم تاني خالص</p>
+            </div>
+            <div class="timeline-item">
+                <strong>عيد ميلاد أغلى الناس (15/6)</strong>
+                <p>يوم ميلاد طمطم اليوم اللي اتولدت فيه الضحكة اللي بتنور حياتي</p>
+            </div>
+            <div class="timeline-item">
+                <strong>أول خروجة</strong>
+                <p>عند عبير ساعتها كنت مش عاوز ابص لحاجة غير عينك 🥺❤️</p>
+            </div>
+        </div>
+
+        <button class="footer-btn" onclick="alert('كل سنة وأنتي حبيبتي يا طمطم ❤️')">Happy Valentine My Queen 👑</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById('password').value;
+            if (pass === "15/6") {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
 <body>
 
     <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/embed/Sh24Dnb_Elw?enablejsapi=1" frameborder="0" style="display:none;"></iframe>
