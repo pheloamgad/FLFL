@@ -19,7 +19,8 @@
         .card { background: white; border-radius: 25px; padding: 20px; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0,0,0,0.05); border: 1px solid #f8bbd0; text-align: center; }
         h2 { color: var(--dark-pink); font-family: 'Amiri', serif; margin-bottom: 15px; }
         
-        .special-photo { width: 100%; border-radius: 15px; margin-bottom: 10px; border: 1px solid #eee; height: auto; display: block; }
+        /* الصور تظهر كاملة 100% بدون زووم وبدون قص */
+        .special-photo { width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px; border: 1px solid #eee; display: block; }
         .photo-caption { font-size: 1.1rem; color: var(--dark-pink); font-weight: bold; margin-bottom: 25px; display: block; }
 
         .timer-box { background: #fdf2f5; padding: 15px; border-radius: 15px; margin: 10px 0; border: 1px solid #fce4ec; }
@@ -44,7 +45,7 @@
         <p>اكتبي تاريخ ميلادك عشان تدخلي ❤️</p>
         <input type="text" id="password" class="pass-input" placeholder="يوم/شهر">
         <br>
-        <button id="unlock-button" class="unlock-btn" onclick="checkPassword()">فتح القفل</button>
+        <button class="unlock-btn" onclick="checkPassword()">فتح القفل</button>
         <p id="error-msg" style="color: red; font-size: 0.8rem; display: none; margin-top: 10px;">الباسوورد غلط يا طمطم ركزي 😉</p>
     </div>
 
@@ -66,11 +67,14 @@
 
         <div class="card">
             <h3>حكاياتنا بالصور 📸</h3>
-            <img src="https://i.ibb.co/fdGpHH5q/image.jpg" class="special-photo">
-            <span class="photo-caption">اول بحبك قولناها لبعض 🤗❤️</span>
-            <hr style="border: 0.5px solid #fce4ec; margin: 25px 0;">
-            <img src="https://i.ibb.co/8gspTrMC/image.jpg" class="special-photo">
+            
+            <img src="https://i.ibb.co/8gspTrMC/image.jpg" class="special-photo" alt="اول خناقة">
             <span class="photo-caption">اول خناقة وصلح بينا 🤗❤️</span>
+            
+            <hr style="border: 0.5px solid #fce4ec; margin: 25px 0;">
+
+            <img src="https://i.ibb.co/fdGpHH5q/image.jpg" class="special-photo" alt="اول بحبك">
+            <span class="photo-caption">اول بحبك قولناها لبعض 🤗❤️</span>
         </div>
 
         <div class="card">
@@ -113,30 +117,20 @@
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
-                height: '0',
-                width: '0',
-                videoId: 'Sh24Dnb_Elw', // أغنية أنت الحظ
+                height: '0', width: '0', videoId: 'Sh24Dnb_Elw',
                 playerVars: { 'autoplay': 0, 'controls': 0, 'enablejsapi': 1 },
             });
         }
-
         function checkPassword() {
             const pass = document.getElementById('password').value;
-            const errorMsg = document.getElementById('error-msg');
-            const lockScreen = document.getElementById('lock-screen');
-            const mainContent = document.getElementById('main-content');
-
             if (pass === "15/6") {
-                // افتح الموقع فوراً
-                lockScreen.style.display = 'none';
-                mainContent.style.display = 'block';
-
-                // حاول تشغل الأغنية لو اليوتيوب جاهز
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
                 if (player && typeof player.playVideo === 'function') {
                     player.playVideo();
                 }
             } else {
-                errorMsg.style.display = 'block';
+                document.getElementById('error-msg').style.display = 'block';
             }
         }
     </script>
