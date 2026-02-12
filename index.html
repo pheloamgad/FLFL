@@ -9,18 +9,19 @@
         :root { --main-pink: #fce4ec; --dark-pink: #ad1457; --accent-pink: #d81b60; }
         body { background-color: var(--main-pink); font-family: 'Cairo', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; color: #4a4a4a; overflow-x: hidden; }
         
-        /* شاشة القفل */
         #lock-screen { text-align: center; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 350px; z-index: 1000; position: fixed; }
         .pass-input { width: 80%; padding: 12px; border: 2px solid var(--main-pink); border-radius: 15px; text-align: center; font-size: 1.2rem; outline: none; margin: 20px 0; }
         .unlock-btn { background: var(--accent-pink); color: white; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer; font-weight: bold; }
 
-        /* المحتوى الرئيسي */
         #main-content { display: none; width: 100%; max-width: 450px; padding: 20px; animation: fadeIn 1.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .card { background: white; border-radius: 25px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0,0,0,0.05); border: 1px solid #f8bbd0; text-align: center; }
+        .card { background: white; border-radius: 25px; padding: 20px; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0,0,0,0.05); border: 1px solid #f8bbd0; text-align: center; }
         h2 { color: var(--dark-pink); font-family: 'Amiri', serif; margin-bottom: 15px; }
         
+        .special-photo { width: 100%; border-radius: 20px; margin-bottom: 10px; border: 3px solid var(--main-pink); }
+        .photo-caption { font-size: 1.1rem; color: var(--dark-pink); font-weight: bold; margin-bottom: 15px; display: block; }
+
         .timer-box { background: #fdf2f5; padding: 15px; border-radius: 15px; margin: 10px 0; border: 1px solid #fce4ec; }
         .timer-num { display: block; font-weight: bold; font-size: 1.8rem; color: var(--accent-pink); }
 
@@ -38,18 +39,18 @@
     <div id="lock-screen">
         <div style="font-size: 50px;">🔒</div>
         <h2 style="margin-top: 10px;">مكاننا الخاص</h2>
-        <p>اكتبِ تاريخ ميلادك عشان تدخلي ❤️</p>
+        <p>اكتبي تاريخ ميلادك عشان تدخلي ❤️</p>
         <input type="text" id="password" class="pass-input" placeholder="يوم/شهر">
         <br>
         <button class="unlock-btn" onclick="checkPassword()">فتح القفل</button>
-        <p id="error-msg" style="color: red; font-size: 0.8rem; display: none; margin-top: 10px;">الباسوورد غلط يا طمطم! ركزي 😉</p>
+        <p id="error-msg" style="color: red; font-size: 0.8rem; display: none; margin-top: 10px;">الباسوورد غلط يا طمطم ركزي 😉</p>
     </div>
 
     <div id="main-content">
         <div class="card">
             <div style="font-size: 40px; animation: beat 1s infinite;">❤️</div>
             <h2>إلى طمطم</h2>
-            <p>كل ثانية معاكِ هي بداية قصة حب جديدة</p>
+            <p>كل ثانية معاكي هي بداية قصة حب جديدة</p>
         </div>
 
         <div class="card">
@@ -62,19 +63,27 @@
         </div>
 
         <div class="card">
+            <h3>حكاياتنا بالصور 📸</h3>
+            <img src="https://i.ibb.co/fdGpHH5q/image.jpg" class="special-photo" alt="اول بحبك">
+            <span class="photo-caption">اول بحبك قولناها لبعض 🤗❤️</span>
+            <hr style="border: 0.5px solid #fce4ec; margin: 20px 0;">
+            <img src="https://i.ibb.co/8gspTrMC/image.jpg" class="special-photo" alt="اول خناقة">
+            <span class="photo-caption">اول خناقة وصلح بينا 🤗❤️</span>
+        </div>
+
+        <div class="card">
             <h2>Love Letter 💌</h2>
             <div class="love-letter">
-                عايز أقول ليكِ كلمتين يا طمطم، حاجة يمكن ما تتخيليهاش...
-                أنتِ أكتر إنسانة لمست قلبي من غير ما تحسي. كل مرة بتكلم معاكِ بحس إني بجري من تعب الدنيا كلها وأجي لصوتك - هو المكان اللي برتاح فيه.
+                عايز أقول ليكي كلمتين يا طمطم حاجة يمكن ما تتخيليهاش
+                انتي اكتر إنسانة لمست قلبي من غير ما تحسي كل مرة بتكلم معاكي بحس إني بجري من تعب الدنيا كلها وأجي لصوتك هو المكان اللي برتاح فيه
                 
-                بحس إني لقيت نفسي فيكِ، في كل تفاصيلك. بتخليني أصدق إن في حب حقيقي لسه قاعد.
+                بحس إني لقيت نفسي فيكي في كل تفاصيلك بتخليني أصدق إن في حب حقيقي لسه قاعد
                 
-                💖 بحبك لأنك قاعدة معايا مريح
-                🌸 لأنك أنتِ الأمان كله
+                🌸 ليكي انتي الأمان كله
                 💖 بحبك لأنك بتفهميني من غير ما أتكلم
                 🌸 بتطمنيني من غير ما أشرح
-                💖 بحبك لأنك دائماً السبب في ضحكتي
-                🌸 علمتيني أحس من غير خوف، وأحب وأنا مطمن
+                💖 بحبك لأنك دايما السبب في ضحكتي
+                🌸 علمتيني أحس من غير خوف وأحب وأنا مطمنة
             </div>
         </div>
 
@@ -82,19 +91,19 @@
             <h3>ذكرياتنا 📖</h3>
             <div class="timeline-item">
                 <strong>أول يوم لما اتقابلنا (17/11/2023)</strong>
-                <p>اليوم اللي غير مسار حياتي كلها.. البداية اللي كنت بحلم بيها.</p>
+                <p>اليوم اللي غير مسار حياتي كلها البداية اللي كنت بحلم بيها</p>
             </div>
             <div class="timeline-item">
                 <strong>عيد ميلاد أغلى الناس (15/6)</strong>
-                <p>يوم ميلاد طمطم.. اليوم اللي اتولدت فيه الضحكة اللي بتنور حياتي ✨</p>
+                <p>يوم ميلاد طمطم اليوم اللي اتولدت فيه الضحكة اللي بتنور حياتي</p>
             </div>
             <div class="timeline-item">
                 <strong>أول خروجة</strong>
-                <p>ضحكتنا اللي كانت مالية المكان.. يوم هنفتكره طول العمر 😂❤️</p>
+                <p>عند عبير ساعتها كنت مش عاوز ابص لحاجة غير عينك 🥺❤️</p>
             </div>
         </div>
 
-        <button class="footer-btn" onclick="alert('كل سنة وأنتِ حبيبتي يا طمطم! ❤️')">Happy Valentine My Queen 👑</button>
+        <button class="footer-btn" onclick="alert('كل سنة وأنتي حبيبتي يا طمطم ❤️')">Happy Valentine My Queen 👑</button>
     </div>
 
     <script>
@@ -108,7 +117,6 @@
                 document.getElementById('error-msg').style.display = 'block';
             }
         }
-
         function calculateDays() {
             const startDate = new Date("November 17, 2023");
             const today = new Date();
